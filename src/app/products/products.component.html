@@ -1,0 +1,89 @@
+<div class="container">
+  <br>
+  <div *ngIf="addFlag">
+    <form (ngSubmit)="formSubmit()" class="form-horizontal">
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">Name:</label>
+        <input type="text" name='nameField' [(ngModel)]='data.name' class="col-sm-9" placeholder="Enter Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">SKU:</label>
+        <input type="text" name='skuField' [(ngModel)]='data.sku' class="col-sm-9" placeholder="Enter sku">
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">Price:</label>
+        <input type="text" name='priceField' [(ngModel)]='data.price' class="col-sm-9" placeholder="Enter price" type="number"  min="0" pattern= "[0-9]" >
+      </div>
+      <div class="form-group" class="col-sm-10">
+        <button type="submit" class="btn btn-success">Add Product</button>
+      </div>
+    </form>
+  </div>
+  <!--for update-->
+  <div *ngIf="!addFlag">
+    <form (ngSubmit)="formUpdate()" class="form-horizontal">
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">ID:</label>
+        <input type="text" name='idField' [(ngModel)]='product.id' class="col-sm-9" disabled>
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">Name:</label>
+        <input type="text" name='nameField' [(ngModel)]='product.name' class="col-sm-9" placeholder="Enter Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">SKU:</label>
+        <input type="text" name='skuField' [(ngModel)]='product.sku' class="col-sm-9" placeholder="Enter sku">
+      </div>
+      <div class="form-group">
+        <label for="email" class="control-label col-sm-1">Price:</label>
+        <input type="text" name='priceField' [(ngModel)]='product.price' class="col-sm-9" placeholder="Enter Price" type="number"  min="0" pattern= "[0-9]" >
+      </div>
+      <div class="form-group" class="col-sm-10">
+        <button type="submit" class="btn btn-success">Update Product</button>
+        <button type="button" class="btn btn-info" (click)='cancelUpdate()'>Cancel</button>
+      </div>      
+    </form>
+  </div>
+  <br> 
+
+  <table class="table-responsive" >
+    <thead>
+      <tr bgcolor="black" style="color:white;"><th>Name</th><th>SKU</th><th>Price</th><th></th><th></th> </tr>
+   </thead>
+    <tr *ngFor="let product of products; let index = index" class="table table-striped">
+      <td>{{product.name}}</td>      
+      <td>{{product.sku}}</td>      
+      <td>{{product.price}}</td>
+      <td style="width: 5%;"><button type="button" class="btn btn-success" (click)="loadForUpdate(product.id,product.name,product.sku,product.price )">Update</button></td>
+        <td style="width: 5%;"><button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button></td>
+    </tr>
+  </table>
+
+
+
+<!--
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow ui-table ui-table-columntoggle" id="myTable" data-filter="true" 
+data-input="#filterTable-input">
+<thead>
+  <tr><th nowrap="" data-priority="1" data-colstart="1" class="ui-table-priority-1">Name</th>
+    <th nowrap="" data-priority="2" data-colstart="2" class="ui-table-priority-1">SKU</th>
+    <th nowrap="" data-priority="3" data-colstart="3" class="ui-table-priority-1">Price</th>
+    <th nowrap="" data-priority="1" data-colstart="4" class="ui-table-priority-1">Update</th>
+    <th nowrap="" data-priority="1" data-colstart=5 class="ui-table-priority-1">Delete</th>
+  </tr>
+
+  <tbody>
+    <tr *ngFor="let product of products; let index = index" class="">
+      <td nowrap="" class="ui-table-priority-1">{{product.name}}</td>
+      <td nowrap="" class="ui-table-priority-1">{{product.sku}}</td>
+      <td nowrap="" class="ui-table-priority-1">{{product.price}}</td>
+      <td nowrap="" class="ui-table-priority-1"><button type="button" class="btn btn-success" (click)="loadForUpdate(product.id,product.name,product.sku,product.price )">Update</button></td>
+      <td nowrap="" class="ui-table-priority-1"><button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button></td>
+    </tr>  
+  </table>-->
+
+</div>
