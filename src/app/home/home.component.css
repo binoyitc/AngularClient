@@ -6,3 +6,23 @@ kbd {
     color: #FC006C; 
     text-decoration: #F00606; 
 } 
+
+.ifMobile1 {
+	background-image: url('http://localhost:4200/assets/img/kochi_large.jpg');
+	height: 200px;
+}
+.ifMobile2 {	
+	background-image: url(https://images.techhive.com/images/article/2016/09/gb-android-phone-hub-1200x675-100682238-orig.jpg);
+	height: 200px;
+}
+
+@media all and (max-width: 499px) {
+    .ifMobile2 {
+        background-image: url(https://img.bbystatic.com/BestBuy_US/store/ee/2016/mob/pr/153711_virgin/virgin_phone.jpg);
+        height: 160px;
+    }
+    .ifMobile1 {
+		background-image: url('http://www.hotelscochin.com/images/cochin_banner.jpg');
+		height: 160px;
+	}
+}
