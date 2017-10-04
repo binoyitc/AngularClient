@@ -8,7 +8,7 @@ kbd {
 } 
 
 .ifMobile1 {
-	background-image: url('http://localhost:4200/assets/img/kochi_large.jpg');
+	background-image: url('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/assets/img/kochi_large.jpg');
 	height: 200px;
 }
 .ifMobile2 {	
