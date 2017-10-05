@@ -9,20 +9,27 @@ kbd {
 
 .ifMobile1 {
 	background-image: url('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/assets/img/kochi_large.jpg');
-	height: 200px;
+	height: 300px;
 }
 .ifMobile2 {	
 	background-image: url(https://images.techhive.com/images/article/2016/09/gb-android-phone-hub-1200x675-100682238-orig.jpg);
-	height: 200px;
+	height: 300px;
+}
+.ifMobile22 {
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
-@media all and (max-width: 499px) {
-    .ifMobile2 {
-        background-image: url(https://img.bbystatic.com/BestBuy_US/store/ee/2016/mob/pr/153711_virgin/virgin_phone.jpg);
-        height: 160px;
-    }
+@media all and (max-width: 499px) {    
     .ifMobile1 {
 		background-image: url('http://www.hotelscochin.com/images/cochin_banner.jpg');
-		height: 160px;
+		height: 180px;
+	}
+	.ifMobile2 {
+        background-image: url(https://img.bbystatic.com/BestBuy_US/store/ee/2016/mob/pr/153711_virgin/virgin_phone.jpg);
+        height: 180px;        
+    }
+    .ifMobile22 {
+		padding-top: 4px;padding-bottom: 4px;
 	}
 }
