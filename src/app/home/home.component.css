@@ -7,6 +7,21 @@ kbd {
     text-decoration: #F00606; 
 } 
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card_container {
+    padding: 2px 16px;
+}
+
 .ifMobile1 {
 	background-image: url('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/assets/img/kochi_large.jpg');
 	height: 300px;
@@ -32,4 +47,16 @@ kbd {
     .ifMobile22 {
 		padding-top: 4px;padding-bottom: 4px;
 	}
+}
+h3{
+    padding: 2px;
+    margin: 2px;
+}
+.card-text{
+    padding: 5px;
+    margin: 2px;
+}
+.card a{
+    padding: 5px;
+    margin: 5px;
 }
