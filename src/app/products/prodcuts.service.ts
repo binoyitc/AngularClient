@@ -11,7 +11,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class ProductsService {
-    private commentsUrl = 'http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products';
+    private commentsUrl = 'http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products';
     constructor(private http: Http) { }
 
     getProducts(): Observable<Product[]> {
@@ -34,7 +34,7 @@ export class ProductsService {
         let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options       = new RequestOptions({ headers: headers }); // Create a request option
         console.log(data2);
-        return this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        return this.http.post('http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
         .map(response => {
                 //const products = response.json();
                 return response.json();
@@ -45,7 +45,7 @@ export class ProductsService {
         let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options       = new RequestOptions({ headers: headers }); // Create a request option
         return this.http
-          .delete('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' + id, options)
+          .delete('http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' + id, options)
           .map(response => null)
           .catch(this.handleError); 
           //.subscribe(() => console.log('res'));
@@ -53,7 +53,7 @@ export class ProductsService {
     public updateProduct(product: any) {
         let productForUpdate = new ProductForUpdate(product.id, product.name, product.sku, product.price);
     return this.http
-      .put('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' , productForUpdate)
+      .put('http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products/' , productForUpdate)
       .map(response => {
         return new Product(response.json());
       })
@@ -64,7 +64,7 @@ export class ProductsService {
         let headers      = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options       = new RequestOptions({ headers: headers }); // Create a request option
         console.log(data2);
-        this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        this.http.post('http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
         .map(res => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error')) //...errors if
         .subscribe();
@@ -78,7 +78,7 @@ export class ProductsService {
         let options       = new RequestOptions({ headers: headers }); // Create a request option
 
         console.log(data2);
-        this.http.post('http://angulartest-angulartest2.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
+        this.http.post('http://cochin1-cochin1.1d35.starter-us-east-1.openshiftapps.com/rest/shop/products', JSON.stringify(data2), options)
         .map(res => res.json())
         .catch((error:any) => Observable.throw(error.json().error || 'Server error')) //...errors if
         .subscribe();
